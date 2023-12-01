@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Personal portfolio: a home page and one case study page per project.",
+  "scripts": {
+    "css": "sass sass/main.scss css/style.css --no-source-map --style=expanded",
+    "watch": "sass --watch sass/main.scss css/style.css --no-source-map --style=expanded",
+    "serve": "python3 -m http.server 5500"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}
