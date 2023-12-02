@@ -1,0 +1,10 @@
+$themeClrPrimary: #000;
+
+// Muted body text. Darker than #777 so it clears 4.5:1 on all three grounds
+// the site uses: white, #fafafa, and the skill chip.
+$clrTextMuted: #666;
+
+// Hover and focus share one timing across the site.
+$transitionBase: 0.2s;
+
+$commonBorderRadius: 5px;
