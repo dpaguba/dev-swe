@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    @include respond(tab-port) {
+      padding: 0 2rem;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #333;
+    transition: color $transitionBase ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $themeClrPrimary;
+    }
+  }
+  // The mark is a transparent letterform, so it sits straight on the bar. A
+  // background or a radius here would put the white square back around it.
+  &__logo-img-cont {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+
+    @include respond(tab-port) {
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-right: 1.2rem;
+    }
+  }
+  &__logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+  &__logo-sub {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  &__links {
+    display: flex;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__link {
+    padding: 2.2rem 3rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: rgb(104, 100, 100);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: color $transitionBase ease;
+
+    @include respond(tab-port) {
+      padding: 3rem 1.8rem;
+      font-size: 1.5rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $themeClrPrimary;
+    }
+  }
+}
