@@ -369,3 +369,65 @@ textarea {
 .header__link:hover, .header__link:focus-visible {
   color: #000;
 }
+.header__main-ham-menu-cont {
+  display: none;
+  width: 3rem;
+  padding: 2.2rem 0;
+}
+@media only screen and (max-width: 37.5em) {
+  .header__main-ham-menu-cont {
+    display: block;
+  }
+}
+.header__main-ham-menu {
+  width: 100%;
+  height: auto;
+}
+.header__main-ham-menu-close {
+  width: 100%;
+  height: auto;
+}
+.header__sm-menu {
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.header__sm-menu--active {
+  visibility: hidden;
+  opacity: 0;
+}
+@media only screen and (max-width: 37.5em) {
+  .header__sm-menu--active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.header__sm-menu-link a {
+  display: block;
+  text-decoration: none;
+  padding: 2.5rem 3rem;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.2s ease;
+}
+.header__sm-menu-link a:hover, .header__sm-menu-link a:focus-visible {
+  color: #000;
+}
+.header__sm-menu-link:first-child a {
+  border-top: 1px solid #eee;
+}
+.header__sm-menu-link-last {
+  border-bottom: 0;
+}
