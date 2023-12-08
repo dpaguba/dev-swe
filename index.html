@@ -23,9 +23,94 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__content">
+        <a href="#" class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/mark.png"
+              alt="Dmytro Pahuba"
+              width="256"
+              height="256"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Dmytro Pahuba</span>
+        </a>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="#" class="header__link" aria-current="page"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link"> About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link"> Projects </a>
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="header__main-ham-menu-cont"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="sm-menu"
+          >
+            <img src="./assets/svg/ham-menu.svg" alt="" width="24" height="24" class="header__main-ham-menu" />
+            <img src="./assets/svg/ham-menu-close.svg" alt="" width="24" height="24" class="header__main-ham-menu-close d-none" />
+          </button>
+        </div>
+      </div>
+      <div class="header__sm-menu" id="sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="#" aria-current="page"> Home </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <main>
 
     </main>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper" data-reveal-stagger>
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/dmytro-pahuba-b0868b26b/">
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="LinkedIn" width="90" height="90" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/dpaguba">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="GitHub" width="30" height="30" />
+              </a>
+              <a href="mailto:dpaguba@gmail.com">
+                <img class="main-footer__icon" src="./assets/svg/mail.svg" alt="Email" width="24" height="24" />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h2 class="heading heading-sm text-lt">Dmytro Pahuba</h2>
+            <p class="main-footer__short-desc">
+              Working student developer in Dortmund. Cross-platform
+              applications, backends that had to hold up, and a computer science
+              degree in progress at TU Dortmund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <script src="./index.js"></script>
   </body>
 </html>
