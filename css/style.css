@@ -289,6 +289,63 @@ textarea {
   display: none;
 }
 
+.home-hero {
+  color: #fff;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(../assets/svg/common-bg.svg);
+  background-position: center;
+  height: 100vh;
+  min-height: 80rem;
+  max-height: 120rem;
+  position: relative;
+}
+@media only screen and (max-width: 37.5em) {
+  .home-hero {
+    height: unset;
+    min-height: unset;
+  }
+}
+.home-hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70rem;
+  width: 92%;
+  z-index: 1;
+}
+@media only screen and (max-width: 37.5em) {
+  .home-hero__content {
+    padding: 19rem 0 13rem 0;
+    margin: auto;
+    position: relative;
+    transform: translate(0, 0);
+  }
+}
+.home-hero__info {
+  margin: 3rem auto 0 auto;
+  max-width: 60rem;
+}
+.home-hero__cta {
+  margin-top: 5rem;
+  text-align: center;
+}
+.home-hero__mouse-scroll-cont {
+  position: absolute;
+  z-index: 1;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 37.5em) {
+  .home-hero__mouse-scroll-cont {
+    position: static;
+    transform: none;
+    padding-bottom: 4rem;
+  }
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -507,5 +564,41 @@ textarea {
 @media only screen and (max-width: 56.25em) {
   .main-footer__lower {
     padding: 3.5rem 0;
+  }
+}
+
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid #eee;
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.mouse::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #eee;
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 1.3s infinite;
+  -webkit-animation: wheel 1.3s infinite;
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 27px;
+  }
+}
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 27px;
   }
 }

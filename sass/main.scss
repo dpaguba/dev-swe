@@ -1,5 +1,8 @@
 @use 'base/base';
 @use 'abstracts/utilities';
 
+@use 'pages/home';
+
 @use 'components/header';
 @use 'components/footer';
+@use 'components/mouse-scroll';
