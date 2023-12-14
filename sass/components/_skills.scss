@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as *;
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  &__skill {
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+    background: rgba(#999, 0.2);
+    border-radius: $commonBorderRadius;
+    font-weight: 600;
+    color: $clrTextMuted;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
+
+  // Entrance and hover are stated together because either `transition` shorthand
+  // would wipe the other, and the reveal layer is loaded after this one.
+  & &__skill {
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1)
+        var(--reveal-delay, 0ms),
+      transform 0.14s ease-out;
+  }
+}
