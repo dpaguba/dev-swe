@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kherson Help Bot | Dmytro Pahuba</title>
+    <meta name="description" content="Two Telegram bots built after the Kakhovka dam collapse, standing between people who needed evacuation from Kherson and the volunteers who could reach them." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Kherson Help Bot | Dmytro Pahuba" />
+    <meta property="og:description" content="Two Telegram bots built after the Kakhovka dam collapse, standing between people who needed evacuation from Kherson and the volunteers who could reach them." />
+    <meta property="og:image" content="assets/jpeg/kherson-bot-mockup.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="assets/png/mark.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/png/favicon-180.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <a href="./index.html" class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/mark.png"
+              alt="Dmytro Pahuba"
+              width="256"
+              height="256"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Dmytro Pahuba</span>
+        </a>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link"> About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link"> Projects </a>
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="header__main-ham-menu-cont"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="sm-menu"
+          >
+            <img src="./assets/svg/ham-menu.svg" alt="" width="24" height="24" class="header__main-ham-menu" />
+            <img src="./assets/svg/ham-menu-close.svg" alt="" width="24" height="24" class="header__main-ham-menu-close d-none" />
+          </button>
+        </div>
+      </div>
+      <div class="header__sm-menu" id="sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="project-cs-hero project-cs-hero--tg">
+        <div class="project-cs-hero__content">
+          <h1 class="heading-primary">Kherson Help Bot</h1>
+          <div class="project-cs-hero__info">
+            <p class="text-primary funnel">
+              <span>Two Telegram bots written in the days after the flood,</span>
+              <span>one for the people who needed out,</span>
+              <span>one for the volunteers.</span>
+            </p>
+          </div>
+          <div class="project-cs-hero__cta">
+            <a href="#details" class="btn btn--bg">Read the case study</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" class="project-details">
+        <div class="main-container">
+          <div class="project-details__content">
+            <div class="project-details__content-main">
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">About</h2>
+                <p class="project-details__desc-para">
+                  On 6 June 2023 the Kakhovka dam was destroyed and the lower Dnipro flooded. Two days later this project was started: a pair of Telegram bots standing between people who needed to get out of Kherson and the volunteers with boats and vehicles who could reach them.
+                </p>
+                <p class="project-details__desc-para">
+                  Telegram because it was already open on every phone, on a weak signal, without anything to install. So the whole thing is a conversation rather than an application.
+                </p>
+                <p class="project-details__desc-para">
+                  The two bots went up on 10 June 2023. In their first ten days they took <strong>more than 1800 requests</strong>: most for water and supplies, three hundred evacuations, sixteen to pump out a flooded ground floor. Fourteen hundred came from Kherson itself, the rest from the left bank, Oleshky, Hola Prystan, Kardashynka, towns under occupation while the water was still rising.
+                </p>
+              </div>
+
+              <div class="project-details__tools-used">
+                <h2 class="project-details__content-title">Stack</h2>
+                <ul class="project-details__tools-used-list" data-reveal-stagger>
+                  <li class="project-details__tools-used-item">Python</li>
+                  <li class="project-details__tools-used-item">python-telegram-bot</li>
+                  <li class="project-details__tools-used-item">PostgreSQL</li>
+                  <li class="project-details__tools-used-item">psycopg2</li>
+                  <li class="project-details__tools-used-item">Pydantic Settings</li>
+                  <li class="project-details__tools-used-item">Docker Compose</li>
+                </ul>
+              </div>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">Taking A Request</h2>
+                <p class="project-details__desc-para">
+                  The intake bot opens with four choices: evacuation, humanitarian aid, pumping water out, and the requests you have already filed. Then it asks where you are, and the answer is a settlement rather than a typed address: Kherson, Zymivnyk, Oleshky, Kozachi Laheri, Nova Kakhovka, Dnipriany, Krynky, Kardashynka, Hola Prystan. Left bank and right bank, the places the water reached.
+                </p>
+                <p class="project-details__desc-para">
+                  From there it collects the street, the house number, who or what is being evacuated, anything else worth knowing, and a contact. Every answer that can be a button is a button, and every step has a way back, because typing an address on a phone in the middle of the night is how mistakes get made.
+                </p>
+                <p class="project-details__desc-para">
+                  The aid branch has a list of its own: food parcels, hygiene items, bedding, and special requests such as children's or disability wheelchairs and nappies, with a line stating plainly that medicines are not among them. That sentence is the difference between a form and something written by people who had to answer for what they promised.
+                </p>
+              </div>
+
+              <figure class="project-details__showcase-img-cont">
+                <img
+                  src="./assets/jpeg/kherson-bot-mockup.jpg"
+                  alt="Three phone screens: the intake menu, a request handed to a volunteer, and the district picker"
+                  width="1895"
+                  height="1139"
+                  class="project-details__showcase-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="credit">
+                  The bot in use, June 2023.
+                </figcaption>
+              </figure>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">Handing It Over</h2>
+                <p class="project-details__desc-para">
+                  A new request is broadcast to every active volunteer with a single button on it. The moment one of them takes it, the same message is edited in everybody else's chat, so nobody drives to the same address twice, and the person who filed it is told by name who is coming. The volunteer is then left with two buttons, done and could not do it, and either way the request comes back into circulation or closes.
+                </p>
+                <p class="project-details__desc-para">
+                  That is only possible because every broadcast keeps the message identifier it produced in each volunteer's chat. Without that record there is no way to reach back into dozens of conversations and change what they say.
+                </p>
+              </div>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">What The Database Holds</h2>
+                <p class="project-details__desc-para">
+                  One row per request, and the bot will read it back to you: number, the moment it was filed, the kind of request, the settlement, coordinates when there are any, street and house number, notes, who is being evacuated, a description and a contact. Then the three fields that carry its state, whether it is still open, whether somebody is on it, and which volunteer. Volunteers carry an active flag of their own, so somebody who is asleep or already out on a call stops receiving broadcasts rather than ignoring them.
+                </p>
+                <p class="project-details__desc-para">
+                  Two Docker services out of one compose file, one per bot, sharing that database and a settings object that is validated before either bot starts.
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/dmytro-pahuba-b0868b26b/">
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="LinkedIn" width="90" height="90" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/dpaguba">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="GitHub" width="30" height="30" />
+              </a>
+              <a href="mailto:dpaguba@gmail.com">
+                <img class="main-footer__icon" src="./assets/svg/mail.svg" alt="Email" width="24" height="24" />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h2 class="heading heading-sm text-lt">Dmytro Pahuba</h2>
+            <p class="main-footer__short-desc">
+              Working student developer in Dortmund. Cross-platform
+              applications, backends that had to hold up, and a computer science
+              degree in progress at TU Dortmund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
