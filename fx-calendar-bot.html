@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FX Calendar Bot | Dmytro Pahuba</title>
+    <meta name="description" content="A Discord bot that posts a daily Forex economic calendar digest and fires a reminder fifteen minutes before every high impact event." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="FX Calendar Bot | Dmytro Pahuba" />
+    <meta property="og:description" content="A Discord bot that posts a daily Forex economic calendar digest and fires a reminder fifteen minutes before every high impact event." />
+    <meta property="og:image" content="assets/jpeg/fx-bot-mockup.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="assets/png/mark.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/png/favicon-180.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <a href="./index.html" class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/mark.png"
+              alt="Dmytro Pahuba"
+              width="256"
+              height="256"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Dmytro Pahuba</span>
+        </a>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link"> About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link"> Projects </a>
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="header__main-ham-menu-cont"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="sm-menu"
+          >
+            <img src="./assets/svg/ham-menu.svg" alt="" width="24" height="24" class="header__main-ham-menu" />
+            <img src="./assets/svg/ham-menu-close.svg" alt="" width="24" height="24" class="header__main-ham-menu-close d-none" />
+          </button>
+        </div>
+      </div>
+      <div class="header__sm-menu" id="sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="project-cs-hero project-cs-hero--fx">
+        <div class="project-cs-hero__content">
+          <h1 class="heading-primary">FX Calendar Bot</h1>
+          <div class="project-cs-hero__info">
+            <p class="text-primary funnel">
+              <span>A Discord bot that reads the economic calendar,</span>
+              <span>posts the morning digest, and warns you</span>
+              <span>before the market moves.</span>
+            </p>
+          </div>
+          <div class="project-cs-hero__cta">
+            <a href="#details" class="btn btn--bg">Read the case study</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" class="project-details">
+        <div class="main-container">
+          <div class="project-details__content">
+            <div class="project-details__content-main">
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">About</h2>
+                <p class="project-details__desc-para">
+                  Currency markets are a side interest of mine. The expensive part of following them is being at the screen at the right minute, when a central bank speaks. A Discord server of people with the same interest had the same problem, so I wrote the bot that watches the calendar for all of us.
+                </p>
+                <p class="project-details__desc-para">
+                  It posts one digest every weekday morning and a reminder fifteen minutes before each event, for USD, EUR, GBP and JPY. This one is mine end to end, it is public, and the repository is linked at the bottom.
+                </p>
+              </div>
+
+              <div class="project-details__tools-used">
+                <h2 class="project-details__content-title">Stack</h2>
+                <ul class="project-details__tools-used-list" data-reveal-stagger>
+                  <li class="project-details__tools-used-item">Node.js</li>
+                  <li class="project-details__tools-used-item">discord.js</li>
+                  <li class="project-details__tools-used-item">MongoDB Atlas</li>
+                  <li class="project-details__tools-used-item">Luxon</li>
+                  <li class="project-details__tools-used-item">node-cron</li>
+                  <li class="project-details__tools-used-item">Axios</li>
+                  <li class="project-details__tools-used-item">fast-xml-parser</li>
+                </ul>
+              </div>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">What It Posts</h2>
+                <p class="project-details__desc-para">
+                  At 07:00 Berlin time, Monday to Friday, the bot pulls the week's calendar from Forex Factory, keeps the high and medium impact events for the four currencies it tracks, converts them out of New York time, and posts them as one embed: impact, currency, event, time, forecast and previous reading. Fifteen minutes before each of those events it posts again, this time a single card for the one that is about to move.
+                </p>
+              </div>
+
+              <figure class="project-details__showcase-img-cont">
+                <img
+                  src="./assets/jpeg/fx-bot-mockup.jpg"
+                  alt="A Discord channel showing the bot's morning economic calendar digest"
+                  width="1895"
+                  height="1139"
+                  class="project-details__showcase-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="credit">
+                  Design concept, Figma.
+                </figcaption>
+              </figure>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">Scheduling Without Polling</h2>
+                <p class="project-details__desc-para">
+                  The obvious way to send a reminder is to check the clock every minute. This does not. The morning job runs once on a cron expression, and the events it just fetched are turned into one <code>setTimeout</code> each, scheduled at startup for the moment fifteen minutes before they fire. Nothing loops, nothing wakes up to find there is nothing to do.
+                </p>
+                <p class="project-details__desc-para">
+                  That approach has a sharp edge worth knowing about, and it is written down in the code: Node's timer takes a delay of at most about 24.8 days, and a longer one fires immediately instead. Inside a single trading day it never comes close, but the guard is there because the failure is silent.
+                </p>
+              </div>
+
+              <div class="project-details__desc" data-reveal-stagger>
+                <h2 class="project-details__content-title">Serving Many Servers</h2>
+                <p class="project-details__desc-para">
+                  Each Discord server picks its own channel with a slash command and is stored in MongoDB, so one process serves all of them. The failure strategy follows from that. If the calendar feed or the database is unreachable, the whole job aborts rather than posting half a picture. If one server's channel has been deleted, that server is skipped and logged, and everybody else still gets their morning.
+                </p>
+                <p class="project-details__desc-para">
+                  The configuration is validated on startup before any connection is opened, so a missing token stops the process with a readable message instead of a stack trace an hour later.
+                </p>
+              </div>
+
+              <div class="project-details__links" data-reveal-stagger>
+                <h2 class="project-details__content-title">The Code</h2>
+                <p class="project-details__desc-para">
+                  Public, with the setup written out from creating the Discord application to deploying the slash commands.
+                  <a href="https://github.com/dpaguba/fx-calendar-bot" target="_blank" rel="noreferrer">See the code</a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/dmytro-pahuba-b0868b26b/">
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="LinkedIn" width="90" height="90" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/dpaguba">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="GitHub" width="30" height="30" />
+              </a>
+              <a href="mailto:dpaguba@gmail.com">
+                <img class="main-footer__icon" src="./assets/svg/mail.svg" alt="Email" width="24" height="24" />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h2 class="heading heading-sm text-lt">Dmytro Pahuba</h2>
+            <p class="main-footer__short-desc">
+              Working student developer in Dortmund. Cross-platform
+              applications, backends that had to hold up, and a computer science
+              degree in progress at TU Dortmund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
