@@ -104,7 +104,7 @@
           <div class="project-details__content">
             <div class="project-details__content-main">
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">About</h2>
                 <p class="project-details__desc-para reveal">
                   Currency markets are a side interest of mine. The expensive part of following them is being at the screen at the right minute, when a central bank speaks. A Discord server of people with the same interest had the same problem, so I wrote the bot that watches the calendar for all of us.
@@ -116,7 +116,7 @@
 
               <div class="project-details__tools-used">
                 <h2 class="project-details__content-title reveal">Stack</h2>
-                <ul class="project-details__tools-used-list">
+                <ul class="project-details__tools-used-list" data-reveal-stagger>
                   <li class="project-details__tools-used-item reveal">Node.js</li>
                   <li class="project-details__tools-used-item reveal">discord.js</li>
                   <li class="project-details__tools-used-item reveal">MongoDB Atlas</li>
@@ -127,7 +127,7 @@
                 </ul>
               </div>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">What It Posts</h2>
                 <p class="project-details__desc-para reveal">
                   At 07:00 Berlin time, Monday to Friday, the bot pulls the week's calendar from Forex Factory, keeps the high and medium impact events for the four currencies it tracks, converts them out of New York time, and posts them as one embed: impact, currency, event, time, forecast and previous reading. Fifteen minutes before each of those events it posts again, this time a single card for the one that is about to move.
@@ -149,7 +149,7 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Scheduling Without Polling</h2>
                 <p class="project-details__desc-para reveal">
                   The obvious way to send a reminder is to check the clock every minute. This does not. The morning job runs once on a cron expression, and the events it just fetched are turned into one <code>setTimeout</code> each, scheduled at startup for the moment fifteen minutes before they fire. Nothing loops, nothing wakes up to find there is nothing to do.
@@ -159,7 +159,7 @@
                 </p>
               </div>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Serving Many Servers</h2>
                 <p class="project-details__desc-para reveal">
                   Each Discord server picks its own channel with a slash command and is stored in MongoDB, so one process serves all of them. The failure strategy follows from that. If the calendar feed or the database is unreachable, the whole job aborts rather than posting half a picture. If one server's channel has been deleted, that server is skipped and logged, and everybody else still gets their morning.
@@ -169,7 +169,7 @@
                 </p>
               </div>
 
-              <div class="project-details__links">
+              <div class="project-details__links" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">The Code</h2>
                 <p class="project-details__desc-para reveal">
                   Public, with the setup written out from creating the Discord application to deploying the slash commands.

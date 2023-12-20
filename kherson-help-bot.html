@@ -104,7 +104,7 @@
           <div class="project-details__content">
             <div class="project-details__content-main">
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">About</h2>
                 <p class="project-details__desc-para reveal">
                   On 6 June 2023 the Kakhovka dam was destroyed and the lower Dnipro flooded. Two days later this project was started: a pair of Telegram bots standing between people who needed to get out of Kherson and the volunteers with boats and vehicles who could reach them.
@@ -119,7 +119,7 @@
 
               <div class="project-details__tools-used">
                 <h2 class="project-details__content-title reveal">Stack</h2>
-                <ul class="project-details__tools-used-list">
+                <ul class="project-details__tools-used-list" data-reveal-stagger>
                   <li class="project-details__tools-used-item reveal">Python</li>
                   <li class="project-details__tools-used-item reveal">python-telegram-bot</li>
                   <li class="project-details__tools-used-item reveal">PostgreSQL</li>
@@ -129,7 +129,7 @@
                 </ul>
               </div>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Taking A Request</h2>
                 <p class="project-details__desc-para reveal">
                   The intake bot opens with four choices: evacuation, humanitarian aid, pumping water out, and the requests you have already filed. Then it asks where you are, and the answer is a settlement rather than a typed address: Kherson, Zymivnyk, Oleshky, Kozachi Laheri, Nova Kakhovka, Dnipriany, Krynky, Kardashynka, Hola Prystan. Left bank and right bank, the places the water reached.
@@ -157,7 +157,7 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Handing It Over</h2>
                 <p class="project-details__desc-para reveal">
                   A new request is broadcast to every active volunteer with a single button on it. The moment one of them takes it, the same message is edited in everybody else's chat, so nobody drives to the same address twice, and the person who filed it is told by name who is coming. The volunteer is then left with two buttons, done and could not do it, and either way the request comes back into circulation or closes.
@@ -167,7 +167,7 @@
                 </p>
               </div>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">What The Database Holds</h2>
                 <p class="project-details__desc-para reveal">
                   One row per request, and the bot will read it back to you: number, the moment it was filed, the kind of request, the settlement, coordinates when there are any, street and house number, notes, who is being evacuated, a description and a contact. Then the three fields that carry its state, whether it is still open, whether somebody is on it, and which volunteer. Volunteers carry an active flag of their own, so somebody who is asleep or already out on a call stops receiving broadcasts rather than ignoring them.

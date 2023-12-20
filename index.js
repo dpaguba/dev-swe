@@ -33,6 +33,17 @@ if (menuButton && openIcon && closeIcon && menu) {
 const revealTargets = document.querySelectorAll('.reveal')
 
 if (revealTargets.length) {
+  // A group hands its own children a rising delay, so a heading and the
+  // paragraphs under it arrive one after the other rather than all at once.
+  document.querySelectorAll('[data-reveal-stagger]').forEach((group) => {
+    const step = group.children.length > 8 ? 35 : 80
+    Array.from(group.children)
+      .filter((child) => child.classList.contains('reveal'))
+      .forEach((child, index) => {
+        child.style.setProperty('--reveal-delay', `${index * step}ms`)
+      })
+  })
+
   const show = (element) => element.classList.add('reveal--visible')
 
   if (!('IntersectionObserver' in window)) {

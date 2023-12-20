@@ -108,7 +108,7 @@
           <div class="project-details__content">
             <div class="project-details__content-main">
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">About</h2>
                 <p class="project-details__desc-para reveal">
                   Wald und Holz 4.0 is a competence centre at the <strong>RIF Institut für Forschung und Transfer</strong> in Dortmund that takes Industry 4.0 into forestry. I have been a working student there since January 2022, alongside my applied computer science degree at TU Dortmund.
@@ -120,7 +120,7 @@
 
               <div class="project-details__tools-used">
                 <h2 class="project-details__content-title reveal">Stack</h2>
-                <ul class="project-details__tools-used-list">
+                <ul class="project-details__tools-used-list" data-reveal-stagger>
                   <li class="project-details__tools-used-item reveal">Flutter</li>
                   <li class="project-details__tools-used-item reveal">Dart</li>
                   <li class="project-details__tools-used-item reveal">Riverpod</li>
@@ -137,7 +137,7 @@
                 </ul>
               </div>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Digital Twins</h2>
                 <p class="project-details__desc-para reveal">
                   Every sensor, machine and person in the network is a twin: registered in a shared directory, publishing events, offering services, exchanging messages over a broker. The applications hold no knowledge of any single service. They read what a twin declares and build the interface from it, so a service added on the other side works without a release.
@@ -160,7 +160,7 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Soil Condition Map</h2>
                 <p class="project-details__desc-para reveal">
                   Will an unpaved skid trail carry a harvester today? An operator answers that from experience and from the weather of the past few days, and a wrong call costs money on the spot and compacts the soil for years. A network of soil moisture sensors feeds a water balance model, and the model publishes one map layer per day. The application draws that over OpenStreetMap with an opacity slider, three layers to switch between, and a date picker holding only the days that exist. It learns those days from the map server's capabilities document rather than a list shipped in the build.
@@ -182,7 +182,7 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Twin Companion Application</h2>
                 <p class="project-details__desc-para reveal">
                   A few hectares of woodland usually involve an owner who visits a handful of times a year, a forest association acting for them, a contractor with the machines, and a public body paying part of the bill. Each of them holds a fragment of the same picture. The owner searches the directory, takes the twins they care about into their own view, and subscribes to their events one at a time. Service requests are generated from the parameters a twin declares. The messenger runs over the same broker as everything else, so machine events and human messages land in one thread. Offline is the normal case, not the exception.
@@ -204,7 +204,7 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc">
+              <div class="project-details__desc" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Data Pipeline</h2>
                 <p class="project-details__desc-para reveal">
                   Sensor exports arrive as CSV with gaps, duplicate timestamps and the occasional value that is a fault rather than a measurement, and researchers were cleaning them by hand in spreadsheets. The pipeline normalises timestamps, collapses duplicates, marks gaps rather than interpolating them, and flags outliers rather than deleting them. Statistics run on NumPy, and the output is an interactive dashboard, so a researcher picks their own plot and range instead of asking me for another slice.
@@ -227,7 +227,7 @@
               </figure>
 
 
-              <div class="project-details__links">
+              <div class="project-details__links" data-reveal-stagger>
                 <h2 class="project-details__content-title reveal">Why There Is No Link</h2>
                 <p class="project-details__desc-para reveal">
                   Research work under an NDA, so there is no public repository and no live deployment.
