@@ -20,6 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <noscript>
+      <style>
+        .reveal { opacity: 1; transform: none; }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -99,45 +104,45 @@
           <div class="project-details__content">
             <div class="project-details__content-main">
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">About</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">About</h2>
+                <p class="project-details__desc-para reveal">
                   On 6 June 2023 the Kakhovka dam was destroyed and the lower Dnipro flooded. Two days later this project was started: a pair of Telegram bots standing between people who needed to get out of Kherson and the volunteers with boats and vehicles who could reach them.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   Telegram because it was already open on every phone, on a weak signal, without anything to install. So the whole thing is a conversation rather than an application.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   The two bots went up on 10 June 2023. In their first ten days they took <strong>more than 1800 requests</strong>: most for water and supplies, three hundred evacuations, sixteen to pump out a flooded ground floor. Fourteen hundred came from Kherson itself, the rest from the left bank, Oleshky, Hola Prystan, Kardashynka, towns under occupation while the water was still rising.
                 </p>
               </div>
 
               <div class="project-details__tools-used">
-                <h2 class="project-details__content-title">Stack</h2>
-                <ul class="project-details__tools-used-list" data-reveal-stagger>
-                  <li class="project-details__tools-used-item">Python</li>
-                  <li class="project-details__tools-used-item">python-telegram-bot</li>
-                  <li class="project-details__tools-used-item">PostgreSQL</li>
-                  <li class="project-details__tools-used-item">psycopg2</li>
-                  <li class="project-details__tools-used-item">Pydantic Settings</li>
-                  <li class="project-details__tools-used-item">Docker Compose</li>
+                <h2 class="project-details__content-title reveal">Stack</h2>
+                <ul class="project-details__tools-used-list">
+                  <li class="project-details__tools-used-item reveal">Python</li>
+                  <li class="project-details__tools-used-item reveal">python-telegram-bot</li>
+                  <li class="project-details__tools-used-item reveal">PostgreSQL</li>
+                  <li class="project-details__tools-used-item reveal">psycopg2</li>
+                  <li class="project-details__tools-used-item reveal">Pydantic Settings</li>
+                  <li class="project-details__tools-used-item reveal">Docker Compose</li>
                 </ul>
               </div>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">Taking A Request</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">Taking A Request</h2>
+                <p class="project-details__desc-para reveal">
                   The intake bot opens with four choices: evacuation, humanitarian aid, pumping water out, and the requests you have already filed. Then it asks where you are, and the answer is a settlement rather than a typed address: Kherson, Zymivnyk, Oleshky, Kozachi Laheri, Nova Kakhovka, Dnipriany, Krynky, Kardashynka, Hola Prystan. Left bank and right bank, the places the water reached.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   From there it collects the street, the house number, who or what is being evacuated, anything else worth knowing, and a contact. Every answer that can be a button is a button, and every step has a way back, because typing an address on a phone in the middle of the night is how mistakes get made.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   The aid branch has a list of its own: food parcels, hygiene items, bedding, and special requests such as children's or disability wheelchairs and nappies, with a line stating plainly that medicines are not among them. That sentence is the difference between a form and something written by people who had to answer for what they promised.
                 </p>
               </div>
 
-              <figure class="project-details__showcase-img-cont">
+              <figure class="project-details__showcase-img-cont reveal reveal--figure">
                 <img
                   src="./assets/jpeg/kherson-bot-mockup.jpg"
                   alt="Three phone screens: the intake menu, a request handed to a volunteer, and the district picker"
@@ -152,22 +157,22 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">Handing It Over</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">Handing It Over</h2>
+                <p class="project-details__desc-para reveal">
                   A new request is broadcast to every active volunteer with a single button on it. The moment one of them takes it, the same message is edited in everybody else's chat, so nobody drives to the same address twice, and the person who filed it is told by name who is coming. The volunteer is then left with two buttons, done and could not do it, and either way the request comes back into circulation or closes.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   That is only possible because every broadcast keeps the message identifier it produced in each volunteer's chat. Without that record there is no way to reach back into dozens of conversations and change what they say.
                 </p>
               </div>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">What The Database Holds</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">What The Database Holds</h2>
+                <p class="project-details__desc-para reveal">
                   One row per request, and the bot will read it back to you: number, the moment it was filed, the kind of request, the settlement, coordinates when there are any, street and house number, notes, who is being evacuated, a description and a contact. Then the three fields that carry its state, whether it is still open, whether somebody is on it, and which volunteer. Volunteers carry an active flag of their own, so somebody who is asleep or already out on a call stops receiving broadcasts rather than ignoring them.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   Two Docker services out of one compose file, one per bot, sharing that database and a settings object that is validated before either bot starts.
                 </p>
               </div>

@@ -20,6 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <noscript>
+      <style>
+        .reveal { opacity: 1; transform: none; }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -99,37 +104,37 @@
           <div class="project-details__content">
             <div class="project-details__content-main">
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">About</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">About</h2>
+                <p class="project-details__desc-para reveal">
                   Currency markets are a side interest of mine. The expensive part of following them is being at the screen at the right minute, when a central bank speaks. A Discord server of people with the same interest had the same problem, so I wrote the bot that watches the calendar for all of us.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   It posts one digest every weekday morning and a reminder fifteen minutes before each event, for USD, EUR, GBP and JPY. This one is mine end to end, it is public, and the repository is linked at the bottom.
                 </p>
               </div>
 
               <div class="project-details__tools-used">
-                <h2 class="project-details__content-title">Stack</h2>
-                <ul class="project-details__tools-used-list" data-reveal-stagger>
-                  <li class="project-details__tools-used-item">Node.js</li>
-                  <li class="project-details__tools-used-item">discord.js</li>
-                  <li class="project-details__tools-used-item">MongoDB Atlas</li>
-                  <li class="project-details__tools-used-item">Luxon</li>
-                  <li class="project-details__tools-used-item">node-cron</li>
-                  <li class="project-details__tools-used-item">Axios</li>
-                  <li class="project-details__tools-used-item">fast-xml-parser</li>
+                <h2 class="project-details__content-title reveal">Stack</h2>
+                <ul class="project-details__tools-used-list">
+                  <li class="project-details__tools-used-item reveal">Node.js</li>
+                  <li class="project-details__tools-used-item reveal">discord.js</li>
+                  <li class="project-details__tools-used-item reveal">MongoDB Atlas</li>
+                  <li class="project-details__tools-used-item reveal">Luxon</li>
+                  <li class="project-details__tools-used-item reveal">node-cron</li>
+                  <li class="project-details__tools-used-item reveal">Axios</li>
+                  <li class="project-details__tools-used-item reveal">fast-xml-parser</li>
                 </ul>
               </div>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">What It Posts</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">What It Posts</h2>
+                <p class="project-details__desc-para reveal">
                   At 07:00 Berlin time, Monday to Friday, the bot pulls the week's calendar from Forex Factory, keeps the high and medium impact events for the four currencies it tracks, converts them out of New York time, and posts them as one embed: impact, currency, event, time, forecast and previous reading. Fifteen minutes before each of those events it posts again, this time a single card for the one that is about to move.
                 </p>
               </div>
 
-              <figure class="project-details__showcase-img-cont">
+              <figure class="project-details__showcase-img-cont reveal reveal--figure">
                 <img
                   src="./assets/jpeg/fx-bot-mockup.jpg"
                   alt="A Discord channel showing the bot's morning economic calendar digest"
@@ -144,29 +149,29 @@
                 </figcaption>
               </figure>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">Scheduling Without Polling</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">Scheduling Without Polling</h2>
+                <p class="project-details__desc-para reveal">
                   The obvious way to send a reminder is to check the clock every minute. This does not. The morning job runs once on a cron expression, and the events it just fetched are turned into one <code>setTimeout</code> each, scheduled at startup for the moment fifteen minutes before they fire. Nothing loops, nothing wakes up to find there is nothing to do.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   That approach has a sharp edge worth knowing about, and it is written down in the code: Node's timer takes a delay of at most about 24.8 days, and a longer one fires immediately instead. Inside a single trading day it never comes close, but the guard is there because the failure is silent.
                 </p>
               </div>
 
-              <div class="project-details__desc" data-reveal-stagger>
-                <h2 class="project-details__content-title">Serving Many Servers</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__desc">
+                <h2 class="project-details__content-title reveal">Serving Many Servers</h2>
+                <p class="project-details__desc-para reveal">
                   Each Discord server picks its own channel with a slash command and is stored in MongoDB, so one process serves all of them. The failure strategy follows from that. If the calendar feed or the database is unreachable, the whole job aborts rather than posting half a picture. If one server's channel has been deleted, that server is skipped and logged, and everybody else still gets their morning.
                 </p>
-                <p class="project-details__desc-para">
+                <p class="project-details__desc-para reveal">
                   The configuration is validated on startup before any connection is opened, so a missing token stops the process with a readable message instead of a stack trace an hour later.
                 </p>
               </div>
 
-              <div class="project-details__links" data-reveal-stagger>
-                <h2 class="project-details__content-title">The Code</h2>
-                <p class="project-details__desc-para">
+              <div class="project-details__links">
+                <h2 class="project-details__content-title reveal">The Code</h2>
+                <p class="project-details__desc-para reveal">
                   Public, with the setup written out from creating the Discord application to deploying the slash commands.
                   <a href="https://github.com/dpaguba/fx-calendar-bot" target="_blank" rel="noreferrer">See the code</a>
                 </p>

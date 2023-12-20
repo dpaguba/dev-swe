@@ -30,3 +30,25 @@ if (menuButton && openIcon && closeIcon && menu) {
   })
 }
 
+const revealTargets = document.querySelectorAll('.reveal')
+
+if (revealTargets.length) {
+  const show = (element) => element.classList.add('reveal--visible')
+
+  if (!('IntersectionObserver' in window)) {
+    revealTargets.forEach(show)
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          show(entry.target)
+          observer.unobserve(entry.target)
+        })
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+    )
+
+    revealTargets.forEach((element) => observer.observe(element))
+  }
+}
