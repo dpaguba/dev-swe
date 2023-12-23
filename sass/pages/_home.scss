@@ -22,6 +22,17 @@
     min-height: unset;
   }
 
+  // The moving triangles are drawn here, over the background the stylesheet
+  // already paints, so the hero survives a blocked or refused script unchanged.
+  &__canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
   &__content {
     position: absolute;
     top: 50%;

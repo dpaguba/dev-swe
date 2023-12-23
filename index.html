@@ -20,6 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <noscript>
+      <style>
+        .reveal { opacity: 1; transform: none; }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -79,6 +84,7 @@
     </header>
     <main>
     <section class="home-hero">
+      <canvas class="home-hero__canvas" aria-hidden="true"></canvas>
       <div class="home-hero__content">
         <h1 class="heading-primary funnel">
           <span>Hey, my name is</span>
@@ -102,7 +108,7 @@
     </section>
     <section id="about" class="about sec-pad">
       <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
+        <h2 class="heading heading-sec heading-sec__mb-med reveal">
           <span class="heading-sec__main">About Me</span>
           <span class="heading-sec__sub funnel">
             <span>Where I work, what I have shipped so far,</span>
@@ -110,7 +116,7 @@
           </span>
         </h2>
         <div class="about__content" data-reveal-stagger>
-          <div class="about__content-main">
+          <div class="about__content-main reveal">
             <h3 class="about__content-title">Get to know me!</h3>
             <div class="about__content-details">
               <p class="about__content-details-para">
@@ -135,36 +141,36 @@
               </p>
             </div>
           </div>
-          <div class="about__content-skills">
+          <div class="about__content-skills reveal">
             <h3 class="about__content-title">My Skills</h3>
             <ul class="skills" data-reveal-stagger>
-                <li class="skills__skill">HTML</li>
-                <li class="skills__skill">CSS</li>
-                <li class="skills__skill">SASS</li>
-                <li class="skills__skill">JavaScript</li>
-                <li class="skills__skill">TypeScript</li>
-                <li class="skills__skill">Dart</li>
-                <li class="skills__skill">Flutter</li>
-                <li class="skills__skill">Android</li>
-                <li class="skills__skill">iOS</li>
-                <li class="skills__skill">Python</li>
-                <li class="skills__skill">Node.js</li>
-                <li class="skills__skill">NumPy</li>
-                <li class="skills__skill">Plotly Dash</li>
-                <li class="skills__skill">Java</li>
-                <li class="skills__skill">C++</li>
-                <li class="skills__skill">Kotlin</li>
-                <li class="skills__skill">SQL</li>
-                <li class="skills__skill">PostgreSQL</li>
-                <li class="skills__skill">MongoDB</li>
-                <li class="skills__skill">Docker</li>
-                <li class="skills__skill">Git</li>
-                <li class="skills__skill">Firebase</li>
-                <li class="skills__skill">REST APIs</li>
-                <li class="skills__skill">Riverpod</li>
-                <li class="skills__skill">Hive</li>
-                <li class="skills__skill">Figma</li>
-                <li class="skills__skill">Scrum</li>
+                <li class="skills__skill reveal">HTML</li>
+                <li class="skills__skill reveal">CSS</li>
+                <li class="skills__skill reveal">SASS</li>
+                <li class="skills__skill reveal">JavaScript</li>
+                <li class="skills__skill reveal">TypeScript</li>
+                <li class="skills__skill reveal">Dart</li>
+                <li class="skills__skill reveal">Flutter</li>
+                <li class="skills__skill reveal">Android</li>
+                <li class="skills__skill reveal">iOS</li>
+                <li class="skills__skill reveal">Python</li>
+                <li class="skills__skill reveal">Node.js</li>
+                <li class="skills__skill reveal">NumPy</li>
+                <li class="skills__skill reveal">Plotly Dash</li>
+                <li class="skills__skill reveal">Java</li>
+                <li class="skills__skill reveal">C++</li>
+                <li class="skills__skill reveal">Kotlin</li>
+                <li class="skills__skill reveal">SQL</li>
+                <li class="skills__skill reveal">PostgreSQL</li>
+                <li class="skills__skill reveal">MongoDB</li>
+                <li class="skills__skill reveal">Docker</li>
+                <li class="skills__skill reveal">Git</li>
+                <li class="skills__skill reveal">Firebase</li>
+                <li class="skills__skill reveal">REST APIs</li>
+                <li class="skills__skill reveal">Riverpod</li>
+                <li class="skills__skill reveal">Hive</li>
+                <li class="skills__skill reveal">Figma</li>
+                <li class="skills__skill reveal">Scrum</li>
             </ul>
           </div>
         </div>
@@ -173,7 +179,7 @@
 
     <section id="projects" class="projects sec-pad">
       <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
+        <h2 class="heading heading-sec heading-sec__mb-bg reveal">
           <span class="heading-sec__main">Projects</span>
           <span class="heading-sec__sub funnel">
             <span>Three projects, each written up in full</span>
@@ -183,7 +189,7 @@
 
         <div class="projects__content">
           <div class="projects__row" data-reveal-stagger>
-            <div class="projects__row-img-cont">
+            <div class="projects__row-img-cont reveal reveal--figure">
               <img
                 src="./assets/jpeg/forest-macbook.jpg"
                 alt="A laptop showing a path through a mixed forest in autumn"
@@ -194,7 +200,7 @@
                 decoding="async"
               />
             </div>
-            <div class="projects__row-content">
+            <div class="projects__row-content reveal">
               <h3 class="projects__row-content-title">KWH 4.0</h3>
               <p class="projects__row-content-desc">
                 The competence centre that puts Industry 4.0 into forestry. Two publicly funded research projects, one shared digital twin platform, and the applications a forester actually holds.
@@ -203,7 +209,7 @@
             </div>
           </div>
           <div class="projects__row" data-reveal-stagger>
-            <div class="projects__row-img-cont">
+            <div class="projects__row-img-cont reveal reveal--figure">
               <img
                 src="./assets/jpeg/kherson-bot-mockup.jpg"
                 alt="Three phone screens showing the intake and volunteer conversations"
@@ -214,7 +220,7 @@
                 decoding="async"
               />
             </div>
-            <div class="projects__row-content">
+            <div class="projects__row-content reveal">
               <h3 class="projects__row-content-title">Kherson Help Bot</h3>
               <p class="projects__row-content-desc">
                 Two Telegram bots written in the days after the Kakhovka dam collapse, one taking requests for evacuation, one handing them to the volunteers who could answer them.
@@ -223,7 +229,7 @@
             </div>
           </div>
           <div class="projects__row" data-reveal-stagger>
-            <div class="projects__row-img-cont">
+            <div class="projects__row-img-cont reveal reveal--figure">
               <img
                 src="./assets/jpeg/fx-bot-mockup.jpg"
                 alt="A Discord channel showing the bot's morning economic calendar digest"
@@ -234,7 +240,7 @@
                 decoding="async"
               />
             </div>
-            <div class="projects__row-content">
+            <div class="projects__row-content reveal">
               <h3 class="projects__row-content-title">FX Calendar Bot</h3>
               <p class="projects__row-content-desc">
                 A Discord bot that posts the morning economic calendar and fires a reminder fifteen minutes before every high impact event.
@@ -249,7 +255,7 @@
     <footer class="main-footer">
       <div class="main-container">
         <div class="main-footer__upper" data-reveal-stagger>
-          <div class="main-footer__row main-footer__row-1">
+          <div class="main-footer__row main-footer__row-1 reveal">
             <h2 class="heading heading-sm main-footer__heading-sm">
               <span>Social</span>
             </h2>
@@ -265,7 +271,7 @@
               </a>
             </div>
           </div>
-          <div class="main-footer__row main-footer__row-2">
+          <div class="main-footer__row main-footer__row-2 reveal">
             <h2 class="heading heading-sm text-lt">Dmytro Pahuba</h2>
             <p class="main-footer__short-desc">
               Working student developer in Dortmund. Cross-platform
@@ -278,5 +284,6 @@
     </footer>
 
     <script src="./index.js"></script>
+    <script type="module" src="./hero.js"></script>
   </body>
 </html>
