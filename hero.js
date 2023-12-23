@@ -10,11 +10,13 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.m
  * sixty, because at this speed nobody can tell and it halves the work.
  *
  * The stylesheet paints the original background underneath, so a blocked
- * script or a machine without WebGL is left with the hero exactly as it was.
+ * script, a machine without WebGL or a visitor who asked for less motion is
+ * left with the hero exactly as it was.
  */
 
 const hero = document.querySelector('.home-hero')
 const canvas = document.querySelector('.home-hero__canvas')
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
 
 if (hero && canvas) {
   const SEGMENTS_X = 88
@@ -105,7 +107,7 @@ if (hero && canvas) {
   }
 
   const start = () => {
-    if (running) return
+    if (running || reduced.matches) return
     running = true
     due = 0
     frame = requestAnimationFrame(loop)
@@ -124,5 +126,11 @@ if (hero && canvas) {
     if (!running) draw(0)
   })
 
-  start()
+  // None of this costs anything while nobody is looking at it.
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()))
+  new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
+    threshold: 0,
+  }).observe(hero)
+
+  reduced.addEventListener('change', () => (reduced.matches ? stop() : start()))
 }
