@@ -1,0 +1,175 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.home-hero {
+  color: #fff;
+  background: linear-gradient(
+      to right,
+      rgba($themeClrPrimary, 0.85),
+      rgba($themeClrPrimary, 0.85)
+    ),
+    url(/assets/svg/common-bg.svg);
+  background-position: center;
+
+  height: 100vh;
+
+  min-height: 80rem;
+  max-height: 120rem;
+  position: relative;
+
+  @include respond(phone) {
+    height: unset;
+    min-height: unset;
+  }
+
+  // Drawn over the background this stylesheet paints, which is the fallback.
+  &__canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 70rem;
+    width: 92%;
+    z-index: 1;
+
+    @include respond(phone) {
+      padding: 19rem 0 13rem 0;
+      margin: auto;
+      position: relative;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__info {
+    margin: 3rem auto 0 auto;
+    max-width: 60rem;
+  }
+  &__cta {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  &__mouse-scroll-cont {
+    position: absolute;
+    z-index: 1;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+
+    @include respond(phone) {
+      position: static;
+      transform: none;
+      padding-bottom: 4rem;
+    }
+  }
+}
+
+.about {
+  background: rgb(250, 250, 250);
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10rem;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      grid-gap: 8rem;
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      @include respond(phone) {
+        font-size: 2.4rem;
+      }
+    }
+    &-details-para {
+      font-size: 1.8rem;
+      color: $clrTextMuted;
+      max-width: 60rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      &--hl {
+        font-weight: 700;
+        margin: 0 3px;
+      }
+      &:last-child {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+
+.projects {
+  &__row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 5rem;
+    margin-bottom: 11rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+      margin-bottom: 8rem;
+    }
+
+    @include respond(tab-port) {
+      text-align: center;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-img-cont {
+      overflow: hidden;
+    }
+    &-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    &-content {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include respond(tab-port) {
+        align-items: center;
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        @include respond(phone) {
+          font-size: 2.4rem;
+        }
+      }
+      &-desc {
+        font-size: 1.8rem;
+        color: $clrTextMuted;
+        max-width: 60rem;
+        line-height: 1.7;
+        margin-bottom: 3rem;
+        @include respond(phone) {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}
+

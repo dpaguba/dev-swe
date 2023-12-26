@@ -1,0 +1,205 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.project-cs-hero {
+  color: #fff;
+  position: relative;
+  // The picture gets its own layer so it can settle on load without moving the text.
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        to top,
+        rgba($themeClrPrimary, 1) 0%,
+        rgba($themeClrPrimary, 0) 100%
+      ),
+      url(/assets/jpeg/kwh-forest-floor.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: enter-settle 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  &--fx::before {
+    background: linear-gradient(
+        to top,
+        rgba($themeClrPrimary, 1) 0%,
+        rgba($themeClrPrimary, 0) 100%
+      ),
+      url(/assets/jpeg/fx-hero.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--tg::before {
+    background: linear-gradient(
+        to top,
+        rgba($themeClrPrimary, 1) 0%,
+        rgba($themeClrPrimary, 0) 100%
+      ),
+      url(/assets/jpeg/kherson-hero.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--plain::before {
+    background: linear-gradient(
+        to right,
+        rgba($themeClrPrimary, 0.85),
+        rgba($themeClrPrimary, 0.85)
+      ),
+      url(/assets/svg/common-bg.svg);
+    background-size: cover;
+    background-position: center;
+    animation: none;
+  }
+
+  @include respond(phone) {
+    height: unset;
+    min-height: unset;
+  }
+
+  &__content {
+    padding: 25rem 0 17rem 0;
+    max-width: 90rem;
+    width: 92%;
+    margin: auto;
+
+    @include respond(phone) {
+      padding: 19rem 0 13rem 0;
+      margin: auto;
+      position: static;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__info {
+    margin: 3rem auto 0 auto;
+    max-width: 80rem;
+  }
+  &__cta {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  &__credit {
+    position: absolute;
+    right: 2.4rem;
+    bottom: 1.6rem;
+    font-size: 1.2rem;
+    color: rgba(#fff, 0.7);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      transition: color $transitionBase;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #fff;
+    }
+
+    @include respond(phone) {
+      position: static;
+      display: block;
+      padding: 0 0 1.6rem 0;
+      text-align: center;
+    }
+  }
+}
+
+.project-details {
+  &__content {
+    padding: 8rem 0;
+    max-width: 90rem;
+    margin: auto;
+
+    &-title {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      @include respond(phone) {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  &__showcase-img-cont {
+    width: 100%;
+    margin-bottom: 6rem;
+  }
+
+  &__showcase-img {
+    width: 100%;
+    height: auto;
+  }
+  &__content-main {
+    width: 100%;
+    max-width: 70rem;
+    margin: auto;
+  }
+  &__desc {
+    margin: 0 0 7rem 0;
+
+    &-para {
+      font-size: 1.8rem;
+      line-height: 1.7;
+      color: $clrTextMuted;
+      margin-bottom: 2rem;
+
+      // The base stylesheet strips underlines, so running copy restates its own.
+      a {
+        color: $themeClrPrimary;
+        text-decoration: underline;
+        text-underline-offset: 0.12em;
+        transition: color $transitionBase ease;
+
+        &:hover,
+        &:focus-visible {
+          color: $clrTextMuted;
+        }
+      }
+    }
+  }
+  &__tools-used {
+    margin: 0 0 7rem 0;
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-item {
+      padding: 1rem 2rem;
+      margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+      font-size: 1.6rem;
+      background: rgba(#999, 0.2);
+      border-radius: $commonBorderRadius;
+      font-weight: 600;
+      color: $clrTextMuted;
+    }
+  }
+  &__links {
+    margin: 0 0;
+    &-btn {
+      margin-right: 2rem;
+      @include respond(phone) {
+        margin-right: 0;
+        width: 70%;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      &:last-child {
+        margin: 0;
+        @include respond(phone) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
