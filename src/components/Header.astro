@@ -1,0 +1,44 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#projects', label: 'Projects' },
+]
+---
+
+<header class="header">
+  <div class="header__content">
+    <a href="/" class="header__logo-container">
+      <div class="header__logo-img-cont">
+        <img src="/assets/png/mark.png" alt="Dmytro Pahuba" width="256" height="256" class="header__logo-img" />
+      </div>
+      <span class="header__logo-sub">Dmytro Pahuba</span>
+    </a>
+    <div class="header__main">
+      <ul class="header__links">
+        {links.map(({ href, label }) => (
+          <li class="header__link-wrapper"><a href={href} class="header__link">{label}</a></li>
+        ))}
+      </ul>
+      <button
+        type="button"
+        class="header__main-ham-menu-cont"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="sm-menu"
+      >
+        <img src="/assets/svg/ham-menu.svg" alt="" width="24" height="24" class="header__main-ham-menu" />
+        <img src="/assets/svg/ham-menu-close.svg" alt="" width="24" height="24" class="header__main-ham-menu-close d-none" />
+      </button>
+    </div>
+  </div>
+  <div class="header__sm-menu" id="sm-menu">
+    <div class="header__sm-menu-content">
+      <ul class="header__sm-menu-links">
+        {links.map(({ href, label }) => (
+          <li class="header__sm-menu-link"><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
