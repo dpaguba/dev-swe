@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro'
+import Hero from '../components/Hero.astro'
+import { projects, skills } from '../data/projects.js'
+
+const title = 'Dmytro Pahuba, Software Developer'
+const description =
+  'Dmytro Pahuba, working student developer in Dortmund. Flutter applications for forestry research, two bots that went out under pressure, and a computer science degree at TU Dortmund.'
+
+const heroLines = [
+  'I study applied computer science at TU Dortmund and work',
+  'alongside it at a research institute, building',
+  'cross-platform applications and',
+  'the backends behind them.',
+]
+---
+
+<Base title={title} tab="DP | SWE" description={description}>
+  <Hero lines={heroLines} />
+
+  <section id="about" class="about sec-pad">
+    <div class="main-container">
+      <h2 class="heading heading-sec heading-sec__mb-med reveal">
+        <span class="heading-sec__main">About Me</span>
+        <span class="heading-sec__sub funnel">
+          <span>Where I work, what I have shipped so far,</span>
+          <span>and the tools I reach for</span>
+        </span>
+      </h2>
+      <div class="about__content" data-reveal-stagger>
+        <div class="about__content-main reveal">
+          <h3 class="about__content-title">Get to know me!</h3>
+          <div class="about__content-details">
+            <p class="about__content-details-para">
+              I am <strong>Dmytro Pahuba</strong>, based in Dortmund. Since January 2022 I have
+              been a working student at the <strong>RIF Institut für Forschung und Transfer</strong>,
+              on two publicly funded digital forestry projects. My side of them is the software a
+              forester actually holds: cross-platform applications in <strong>Flutter</strong> that
+              put a soil model on a map, turn machines and sensors into things you can talk to, and
+              keep working when the phone drops off the network in a wood. The two bots on this page
+              came from somewhere else entirely, one from a flood and one from my own trading, and
+              both are backend work.
+            </p>
+            <p class="about__content-details-para">
+              In parallel I am doing a B.Sc. in Applied Computer Science at
+              <strong>TU Dortmund</strong>. The code that went out to real users is Dart, Python and
+              JavaScript. The degree added the rest: a term long team project in Kotlin, TypeScript
+              and Sass in the web modules, Java and C further back, and a lot of Python across data
+              warehousing, compiler construction and machine learning.
+            </p>
+          </div>
+        </div>
+        <div class="about__content-skills reveal">
+          <h3 class="about__content-title">My Skills</h3>
+          <ul class="skills" data-reveal-stagger>
+            {skills.map((skill) => <li class="skills__skill reveal">{skill}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects sec-pad">
+    <div class="main-container">
+      <h2 class="heading heading-sec heading-sec__mb-bg reveal">
+        <span class="heading-sec__main">Projects</span>
+        <span class="heading-sec__sub funnel">
+          <span>Three projects, each written up in full</span>
+          <span>with what I built and why</span>
+        </span>
+      </h2>
+
+      <div class="projects__content">
+        {projects.map((project) => (
+          <div class="projects__row" data-reveal-stagger>
+            <div class="projects__row-img-cont reveal reveal--figure">
+              <img
+                src={project.image}
+                alt={project.alt}
+                width={project.width}
+                height={project.height}
+                class="projects__row-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="projects__row-content reveal">
+              <h3 class="projects__row-content-title">{project.title}</h3>
+              <p class="projects__row-content-desc">{project.card}</p>
+              <a href={`/${project.slug}.html`} class="btn btn--med btn--theme">Case Study</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
