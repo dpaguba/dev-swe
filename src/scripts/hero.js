@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js'
+import * as THREE from 'three'
 
 /**
  * The hero background: the same field of flat triangles it has always been,
@@ -23,7 +23,6 @@ if (hero && canvas) {
   const SEGMENTS_Y = 58
   const FRAME = 1 / 30
 
-  // long, slow, and pulling in slightly different directions
   const SWELL = [
     { x: 0.055, y: 0.041, speed: 0.10, height: 5.0 },
     { x: 0.021, y: 0.076, speed: -0.07, height: 3.8 },
@@ -49,13 +48,12 @@ if (hero && canvas) {
       metalness: 0,
     })
   )
-  // just off square to the camera, so the light falls unevenly across the frame
+  // Off square to the camera, so the light falls unevenly across the frame.
   surface.rotation.set(-0.16, 0.08, 0.05)
   scene.add(surface)
 
-  // The light comes across the surface rather than down it. Grazing light is
-  // what makes a facet that has tilted by two degrees look different from its
-  // neighbour, and that difference is the whole effect.
+  // Grazing light is what makes a facet that tilted by two degrees read as
+  // different from its neighbour. Lit from the front, the swell is invisible.
   scene.add(new THREE.AmbientLight(0xffffff, 0.22))
   const key = new THREE.DirectionalLight(0xffffff, 2.4)
   key.position.set(-70, 42, 12)
@@ -126,7 +124,6 @@ if (hero && canvas) {
     if (!running) draw(0)
   })
 
-  // None of this costs anything while nobody is looking at it.
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()))
   new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
     threshold: 0,

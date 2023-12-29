@@ -1,6 +1,4 @@
-// Scroll driven entrance. Elements carry the closed state from the stylesheet
-// and are opened by an IntersectionObserver in index.js, so nothing here runs
-// on the scroll event itself.
+// Opened by an IntersectionObserver, so nothing here runs on the scroll event.
 
 $revealEase: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -15,8 +13,6 @@ $revealEase: cubic-bezier(0.16, 1, 0.3, 1);
     transform: none;
   }
 
-  // Mockups and photographs travel a little further and settle a little later,
-  // so a figure reads as arriving rather than blinking on.
   &--figure {
     transform: translateY(4rem) scale(0.975);
     transition-duration: 0.9s;

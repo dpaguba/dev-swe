@@ -8,7 +8,7 @@
       rgba($themeClrPrimary, 0.85),
       rgba($themeClrPrimary, 0.85)
     ),
-    url(../assets/svg/common-bg.svg);
+    url(/assets/svg/common-bg.svg);
   background-position: center;
 
   height: 100vh;
@@ -22,8 +22,7 @@
     min-height: unset;
   }
 
-  // The moving triangles are drawn here, over the background the stylesheet
-  // already paints, so the hero survives a blocked or refused script unchanged.
+  // Drawn over the background this stylesheet paints, which is the fallback.
   &__canvas {
     position: absolute;
     inset: 0;
@@ -59,8 +58,6 @@
     text-align: center;
   }
 
-  // The indicator carried no rule of its own, so it sat in the top left of
-  // the hero: behind the bar on a desktop, clipped on a phone.
   &__mouse-scroll-cont {
     position: absolute;
     z-index: 1;

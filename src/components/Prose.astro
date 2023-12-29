@@ -1,0 +1,8 @@
+---
+const { title, paragraphs } = Astro.props
+---
+
+<div class="project-details__desc" data-reveal-stagger>
+  <h2 class="project-details__content-title reveal">{title}</h2>
+  {paragraphs.map((text) => <p class="project-details__desc-para reveal" set:html={text} />)}
+</div>

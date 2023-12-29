@@ -10,9 +10,6 @@
   font-family: inherit;
 }
 
-// The drag lock was written across every element, which also made the whole
-// page unselectable: a visitor could not copy so much as the name. Images
-// keep the lock, text goes back to behaving like text.
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -21,7 +18,6 @@ img {
 }
 
 html {
-  // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -59,9 +55,6 @@ a {
   color: inherit;
 }
 
-// The parts of the page the design does not draw still belong to it: the
-// selection, the tap flash on a phone, and the scrollbar on the platforms
-// that paint one inside the page.
 ::selection {
   background: $themeClrPrimary;
   color: #fff;
@@ -78,8 +71,7 @@ textarea:focus {
   outline: none;
 }
 
-// The ring is drawn in the colour of the text it belongs to, so it stays
-// visible on the dark hero and on the light sections alike.
+// currentColor keeps the ring visible on the dark hero and the light sections alike.
 input:focus-visible,
 button:focus-visible,
 a:focus-visible,
@@ -99,8 +91,6 @@ textarea {
   resize: none;
 }
 
-// One infinite loop and one smooth scroll are the whole motion budget here,
-// and both are what this preference asks a site to drop.
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

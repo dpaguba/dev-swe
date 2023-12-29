@@ -1,0 +1,36 @@
+---
+const social = [
+  { href: 'https://www.linkedin.com/in/dmytro-pahuba-b0868b26b/', icon: '/assets/png/linkedin-ico.png', alt: 'LinkedIn', w: 90, h: 90 },
+  { href: 'https://github.com/dpaguba', icon: '/assets/png/github-ico.png', alt: 'GitHub', w: 30, h: 30 },
+  { href: 'mailto:dpaguba@gmail.com', icon: '/assets/svg/mail.svg', alt: 'Email', w: 24, h: 24 },
+]
+---
+
+<footer class="main-footer">
+  <div class="main-container">
+    <div class="main-footer__upper" data-reveal-stagger>
+      <div class="main-footer__row main-footer__row-1 reveal">
+        <h2 class="heading heading-sm main-footer__heading-sm"><span>Social</span></h2>
+        <div class="main-footer__social-cont">
+          {social.map(({ href, icon, alt, w, h }) => (
+            <a
+              href={href}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
+            >
+              <img class="main-footer__icon" src={icon} alt={alt} width={w} height={h} />
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="main-footer__row main-footer__row-2 reveal">
+        <h2 class="heading heading-sm text-lt">Dmytro Pahuba</h2>
+        <p class="main-footer__short-desc">
+          Working student developer in Dortmund. Cross-platform applications,
+          backends that had to hold up, and a computer science degree in
+          progress at TU Dortmund.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

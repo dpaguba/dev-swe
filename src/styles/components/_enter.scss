@@ -1,7 +1,4 @@
-// Page load entrance. Everything here is CSS keyframes with `both` fill, so a
-// visitor never depends on a script to see the first screen, and the elements
-// that are centred with a transform are left alone and their children moved
-// instead.
+// Keyframes with `both` fill, so the first screen never waits on a script.
 
 $enterEase: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -53,7 +50,6 @@ $enterEase: cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
-// The three groups of the first screen arrive in reading order.
 .home-hero__content,
 .project-cs-hero__content {
   > * {

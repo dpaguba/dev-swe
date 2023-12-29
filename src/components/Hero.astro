@@ -1,0 +1,33 @@
+---
+const { lines } = Astro.props
+---
+
+<section class="home-hero">
+  <canvas class="home-hero__canvas" aria-hidden="true"></canvas>
+  <div class="home-hero__content">
+    <h1 class="heading-primary funnel">
+      <span>Hey, my name is</span>
+      <span>Dmytro Pahuba</span>
+    </h1>
+    <div class="home-hero__info">
+      <p class="text-primary funnel">
+        {lines.map((line, index) => (
+          <>
+            {index > 0 && ' '}
+            <span>{line}</span>
+          </>
+        ))}
+      </p>
+    </div>
+    <div class="home-hero__cta">
+      <a href="#projects" class="btn btn--bg">Projects</a>
+    </div>
+  </div>
+  <div class="home-hero__mouse-scroll-cont">
+    <div class="mouse"></div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/hero.js'
+</script>

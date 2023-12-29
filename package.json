@@ -2,11 +2,16 @@
   "name": "portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "Personal portfolio: a home page and one case study page per project.",
+  "description": "Portfolio: a home page and one case study page per project.",
+  "type": "module",
   "scripts": {
-    "css": "sass sass/main.scss css/style.css --no-source-map --style=expanded",
-    "watch": "sass --watch sass/main.scss css/style.css --no-source-map --style=expanded",
-    "serve": "python3 -m http.server 5500"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.7",
+    "three": "^0.159.0"
   },
   "devDependencies": {
     "sass": "^1.69.5"

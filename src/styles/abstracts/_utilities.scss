@@ -152,9 +152,7 @@
 }
 
 
-// Centred copy reads as a funnel: every authored line is shorter than the one
-// above it. The lines are spans rather than breaks, so a screen too narrow to
-// hold them collapses the block back to ordinary wrapping.
+// Spans rather than breaks, so a narrow screen falls back to ordinary wrapping.
 .funnel {
   span {
     display: block;
@@ -167,7 +165,6 @@
   }
 }
 
-// Photo credit under a figure. Small, quiet, and still legible.
 .credit {
   margin-top: 1.5rem;
   font-size: 1.3rem;

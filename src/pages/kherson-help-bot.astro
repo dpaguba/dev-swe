@@ -1,0 +1,66 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro'
+import Prose from '../components/Prose.astro'
+import Figure from '../components/Figure.astro'
+import Stack from '../components/Stack.astro'
+
+const description =
+  'Two Telegram bots built after the Kakhovka dam collapse, standing between people who needed evacuation from Kherson and the volunteers who could reach them.'
+---
+
+<CaseStudy
+  title="Kherson Help Bot"
+  heading="Kherson Help Bot"
+  description={description}
+  image="/assets/jpeg/kherson-bot-mockup.jpg"
+  hero="tg"
+  lines={[
+    'Two Telegram bots written in the days after the flood,',
+    'one for the people who needed out,',
+    'one for the volunteers.',
+  ]}
+>
+  <Prose
+    title="About"
+    paragraphs={[
+      'On 6 June 2023 the Kakhovka dam was destroyed and the lower Dnipro flooded. Two days later this project was started: a pair of Telegram bots standing between people who needed to get out of Kherson and the volunteers with boats and vehicles who could reach them.',
+      'Telegram because it was already open on every phone, on a weak signal, without anything to install. So the whole thing is a conversation rather than an application.',
+      'The two bots went up on 10 June 2023. In their first ten days they took <strong>more than 1800 requests</strong>: most for water and supplies, three hundred evacuations, sixteen to pump out a flooded ground floor. Fourteen hundred came from Kherson itself, the rest from the left bank, Oleshky, Hola Prystan, Kardashynka, towns under occupation while the water was still rising.',
+    ]}
+  />
+
+  <Stack items={['Python', 'python-telegram-bot', 'PostgreSQL', 'psycopg2', 'Pydantic Settings', 'Docker Compose']} />
+
+  <Prose
+    title="Taking A Request"
+    paragraphs={[
+      'The intake bot opens with four choices: evacuation, humanitarian aid, pumping water out, and the requests you have already filed. Then it asks where you are, and the answer is a settlement rather than a typed address: Kherson, Zymivnyk, Oleshky, Kozachi Laheri, Nova Kakhovka, Dnipriany, Krynky, Kardashynka, Hola Prystan. Left bank and right bank, the places the water reached.',
+      'From there it collects the street, the house number, who or what is being evacuated, anything else worth knowing, and a contact. Every answer that can be a button is a button, and every step has a way back, because typing an address on a phone in the middle of the night is how mistakes get made.',
+      "The aid branch has a list of its own: food parcels, hygiene items, bedding, and special requests such as children's or disability wheelchairs and nappies, with a line stating plainly that medicines are not among them. That sentence is the difference between a form and something written by people who had to answer for what they promised.",
+    ]}
+  />
+
+  <Figure
+    src="/assets/jpeg/kherson-bot-mockup.jpg"
+    alt="Three phone screens: the intake menu, a request handed to a volunteer, and the district picker"
+    width={1895}
+    height={1139}
+    caption="The bot in use, June 2023."
+  />
+
+  <Prose
+    title="Handing It Over"
+    paragraphs={[
+      "A new request is broadcast to every active volunteer with a single button on it. The moment one of them takes it, the same message is edited in everybody else's chat, so nobody drives to the same address twice, and the person who filed it is told by name who is coming. The volunteer is then left with two buttons, done and could not do it, and either way the request comes back into circulation or closes.",
+      "That is only possible because every broadcast keeps the message identifier it produced in each volunteer's chat. Without that record there is no way to reach back into dozens of conversations and change what they say.",
+    ]}
+  />
+
+  <Prose
+    title="What The Database Holds"
+    paragraphs={[
+      'One row per request, and the bot will read it back to you: number, the moment it was filed, the kind of request, the settlement, coordinates when there are any, street and house number, notes, who is being evacuated, a description and a contact. Then the three fields that carry its state, whether it is still open, whether somebody is on it, and which volunteer. Volunteers carry an active flag of their own, so somebody who is asleep or already out on a call stops receiving broadcasts rather than ignoring them.',
+      'Two Docker services out of one compose file, one per bot, sharing that database and a settings object that is validated before either bot starts.',
+    ]}
+  />
+</CaseStudy>

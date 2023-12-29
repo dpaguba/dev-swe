@@ -40,8 +40,7 @@
   &__social-cont {
     margin-top: 2rem;
 
-    // The links were 37x13. The padding grows the tap target and the equal
-    // negative margin gives back the space, so nothing moves.
+    // Padding grows the tap target, the equal negative margin gives the space back.
     a {
       display: inline-flex;
       align-items: center;

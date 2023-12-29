@@ -1,0 +1,16 @@
+---
+const { src, alt, width, height, caption, eager = false } = Astro.props
+---
+
+<figure class="project-details__showcase-img-cont reveal reveal--figure">
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class="project-details__showcase-img"
+    loading={eager ? undefined : 'lazy'}
+    decoding="async"
+  />
+  <figcaption class="credit" set:html={caption} />
+</figure>

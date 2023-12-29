@@ -1,0 +1,10 @@
+---
+const { items } = Astro.props
+---
+
+<div class="project-details__tools-used">
+  <h2 class="project-details__content-title reveal">Stack</h2>
+  <ul class="project-details__tools-used-list" data-reveal-stagger>
+    {items.map((item) => <li class="project-details__tools-used-item reveal">{item}</li>)}
+  </ul>
+</div>

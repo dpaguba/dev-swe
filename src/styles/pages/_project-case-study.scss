@@ -4,14 +4,10 @@
 .project-cs-hero {
   color: #fff;
   position: relative;
-  // The picture sits on its own layer so it can settle on load without
-  // dragging the heading and the button along with it.
+  // The picture gets its own layer so it can settle on load without moving the text.
   isolation: isolate;
   overflow: hidden;
 
-  // The photograph carries the hero. Black runs the full height of it, solid
-  // along the bottom edge and gone by the top, so the heading and the button
-  // keep their contrast while the picture stays visible above them.
   &::before {
     content: '';
     position: absolute;
@@ -22,47 +18,41 @@
         rgba($themeClrPrimary, 1) 0%,
         rgba($themeClrPrimary, 0) 100%
       ),
-      url(../assets/jpeg/kwh-forest-floor.jpg);
+      url(/assets/jpeg/kwh-forest-floor.jpg);
     background-size: cover;
     background-position: center;
     animation: enter-settle 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  // The bot's own output, blurred far enough that the reader takes in the shape
-  // of a Discord channel rather than trying to read last week's forecasts.
   &--fx::before {
     background: linear-gradient(
         to top,
         rgba($themeClrPrimary, 1) 0%,
         rgba($themeClrPrimary, 0) 100%
       ),
-      url(../assets/jpeg/fx-hero.jpg);
+      url(/assets/jpeg/fx-hero.jpg);
     background-size: cover;
     background-position: center;
   }
 
-  // The same conversation seen on a desktop, blurred to the shape of a Telegram
-  // window rather than a wall of readable Ukrainian.
   &--tg::before {
     background: linear-gradient(
         to top,
         rgba($themeClrPrimary, 1) 0%,
         rgba($themeClrPrimary, 0) 100%
       ),
-      url(../assets/jpeg/kherson-hero.jpg);
+      url(/assets/jpeg/kherson-hero.jpg);
     background-size: cover;
     background-position: center;
   }
 
-  // A case study without a photograph of its own falls back to the pattern the
-  // home page uses, and holds still while it does.
   &--plain::before {
     background: linear-gradient(
         to right,
         rgba($themeClrPrimary, 0.85),
         rgba($themeClrPrimary, 0.85)
       ),
-      url(../assets/svg/common-bg.svg);
+      url(/assets/svg/common-bg.svg);
     background-size: cover;
     background-position: center;
     animation: none;
@@ -162,8 +152,7 @@
       color: $clrTextMuted;
       margin-bottom: 2rem;
 
-      // The base stylesheet strips the underline from every link on the site,
-      // so a link inside running copy has to say for itself that it is one.
+      // The base stylesheet strips underlines, so running copy restates its own.
       a {
         color: $themeClrPrimary;
         text-decoration: underline;
