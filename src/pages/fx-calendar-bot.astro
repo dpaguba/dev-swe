@@ -1,0 +1,72 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro'
+import Prose from '../components/Prose.astro'
+import Figure from '../components/Figure.astro'
+import Stack from '../components/Stack.astro'
+
+const description =
+  'A Discord bot that posts a daily Forex economic calendar digest and fires a reminder fifteen minutes before every high impact event.'
+---
+
+<CaseStudy
+  title="FX Calendar Bot"
+  heading="FX Calendar Bot"
+  description={description}
+  image="/assets/jpeg/fx-bot-mockup.jpg"
+  hero="fx"
+  lines={[
+    'A Discord bot that reads the economic calendar,',
+    'posts the morning digest, and warns you',
+    'before the market moves.',
+  ]}
+>
+  <Prose
+    title="About"
+    paragraphs={[
+      'Currency markets are a side interest of mine. The expensive part of following them is being at the screen at the right minute, when a central bank speaks. A Discord server of people with the same interest had the same problem, so I wrote the bot that watches the calendar for all of us.',
+      'It posts one digest every weekday morning and a reminder fifteen minutes before each event, for USD, EUR, GBP and JPY. This one is mine end to end, it is public, and the repository is linked at the bottom.',
+    ]}
+  />
+
+  <Stack items={['Node.js', 'discord.js', 'MongoDB Atlas', 'Luxon', 'node-cron', 'Axios', 'fast-xml-parser']} />
+
+  <Prose
+    title="What It Posts"
+    paragraphs={[
+      "At 07:00 Berlin time, Monday to Friday, the bot pulls the week's calendar from Forex Factory, keeps the high and medium impact events for the four currencies it tracks, converts them out of New York time, and posts them as one embed: impact, currency, event, time, forecast and previous reading. Fifteen minutes before each of those events it posts again, this time a single card for the one that is about to move.",
+    ]}
+  />
+
+  <Figure
+    src="/assets/jpeg/fx-bot-mockup.jpg"
+    alt="A Discord channel showing the bot's morning economic calendar digest"
+    width={1895}
+    height={1139}
+    caption="Design concept, Figma."
+  />
+
+  <Prose
+    title="Scheduling Without Polling"
+    paragraphs={[
+      'The obvious way to send a reminder is to check the clock every minute. This does not. The morning job runs once on a cron expression, and the events it just fetched are turned into one <code>setTimeout</code> each, scheduled at startup for the moment fifteen minutes before they fire. Nothing loops, nothing wakes up to find there is nothing to do.',
+      "That approach has a sharp edge worth knowing about, and it is written down in the code: Node's timer takes a delay of at most about 24.8 days, and a longer one fires immediately instead. Inside a single trading day it never comes close, but the guard is there because the failure is silent.",
+    ]}
+  />
+
+  <Prose
+    title="Serving Many Servers"
+    paragraphs={[
+      "Each Discord server picks its own channel with a slash command and is stored in MongoDB, so one process serves all of them. The failure strategy follows from that. If the calendar feed or the database is unreachable, the whole job aborts rather than posting half a picture. If one server's channel has been deleted, that server is skipped and logged, and everybody else still gets their morning.",
+      'The configuration is validated on startup before any connection is opened, so a missing token stops the process with a readable message instead of a stack trace an hour later.',
+    ]}
+  />
+
+  <div class="project-details__links" data-reveal-stagger>
+    <h2 class="project-details__content-title reveal">The Code</h2>
+    <p class="project-details__desc-para reveal">
+      Public, with the setup written out from creating the Discord application to deploying the
+      slash commands.
+      <a href="https://github.com/dpaguba/fx-calendar-bot" target="_blank" rel="noreferrer">See the code</a>
+    </p>
+  </div>
+</CaseStudy>
