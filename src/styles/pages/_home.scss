@@ -44,7 +44,11 @@
     @include respond(phone) {
       padding: 19rem 0 13rem 0;
       margin: auto;
+      // relative rather than static so it stays above the canvas, which means
+      // the offsets from the desktop rule have to be cleared by hand
       position: relative;
+      top: 0;
+      left: 0;
       transform: translate(0, 0);
     }
   }
