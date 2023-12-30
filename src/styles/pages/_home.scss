@@ -89,6 +89,9 @@
       grid-template-columns: 1fr;
       grid-gap: 8rem;
     }
+    @include respond(phone) {
+      grid-gap: 5rem;
+    }
     &-title {
       font-weight: 700;
       font-size: 2.8rem;
