@@ -12,6 +12,12 @@ npm run build     # static site into dist/
 npm run preview   # serve what was built
 ```
 
+## Deploying
+
+`vercel.json` carries the build settings, so importing the repository into
+Vercel is all it takes: it installs, runs `npm run build` and serves `dist/`
+as static files.
+
 ## Layout
 
 ```
